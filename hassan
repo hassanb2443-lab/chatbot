@@ -1,0 +1,127 @@
+{
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "text": "Hi! 😊 I’m your GlowCare assistant. How can I help you today?"
+          }
+        ]
+      },
+      "conditions": "welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Skincare",
+      "conditions": "#skincare",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "text": "✨ For glowing skin, I recommend our Vitamin C serum and hydrating moisturizer!"
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Makeup",
+      "conditions": "#makeup",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "text": "💄 Our best-selling lipstick and foundation are perfect for everyday wear!"
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Track Order",
+      "conditions": "#order",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "text": "📦 Please provide your order number and I’ll help you track it!"
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "conditions": "#greeting",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "text": "Hello there! 😊 How can I assist you today?"
+          }
+        ]
+      }
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "conditions": "anything_else",
+      "output": {
+        "generic": [
+          {
+            "response_type": "text",
+            "text": "Sorry 😅 I didn’t understand that. You can ask about skincare, makeup, or order tracking!"
+          }
+        ]
+      }
+    }
+  ],
+
+  "intents": [
+    {
+      "intent": "skincare",
+      "examples": [
+        {"text": "I need skincare help"},
+        {"text": "recommend skincare"},
+        {"text": "skincare products"},
+        {"text": "help me with skin"},
+        {"text": "what is good for skin"}
+      ]
+    },
+    {
+      "intent": "makeup",
+      "examples": [
+        {"text": "makeup"},
+        {"text": "recommend makeup"},
+        {"text": "cosmetics"},
+        {"text": "lipstick suggestions"},
+        {"text": "best makeup"}
+      ]
+    },
+    {
+      "intent": "order",
+      "examples": [
+        {"text": "track my order"},
+        {"text": "where is my order"},
+        {"text": "order status"},
+        {"text": "check order"},
+        {"text": "order tracking"}
+      ]
+    },
+    {
+      "intent": "greeting",
+      "examples": [
+        {"text": "hi"},
+        {"text": "hello"},
+        {"text": "hey"},
+        {"text": "good morning"},
+        {"text": "good evening"}
+      ]
+    }
+  ],
+
+  "entities": []
+}
