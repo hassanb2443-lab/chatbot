@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GlowCare Chatbot</title>
+<style>
+body {
+    font-family: Arial;
+}
+#chatbox {
+    width: 350px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.bot {
+    color: blue;
+}
+.user {
+    color: green;
+    text-align: right;
+}
+button {
+    margin: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<h2>GlowCare Assistant 💄</h2>
+
+<div id="chatbox">
+    <div class="bot">Hi! I'm your GlowCare assistant. How can I help you today?</div>
+</div>
+
+<input type="text" id="input" placeholder="Type your message...">
+<button onclick="sendMessage()">Send</button>
+
+<br><br>
+
+<!-- Clickable options -->
+<button onclick="quickReply('skincare')">Skincare</button>
+<button onclick="quickReply('makeup')">Makeup</button>
+<button onclick="quickReply('order')">Track Order</button>
+
+<script>
+
+function sendMessage() {
+    let input = document.getElementById("input").value;
+    addMessage(input, "user");
+    respond(input.toLowerCase());
+    document.getElementById("input").value = "";
+}
+
+function quickReply(text) {
+    addMessage(text, "user");
+    respond(text);
+}
+
+function addMessage(text, sender) {
+    let chatbox = document.getElementById("chatbox");
+    chatbox.innerHTML += `<div class="${sender}">${text}</div>`;
+}
+
+function respond(input) {
+
+    let response = "";
+
+    if (input.includes("skincare")) {
+        response = "For glowing skin, I recommend our Vitamin C serum ✨";
+    } 
+    else if (input.includes("makeup")) {
+        response = "Our best-selling lipstick is perfect for everyday wear 💄";
+    }
+    else if (input.includes("order")) {
+        response = "Please enter your order number to track your order 📦";
+    }
+    else if (input.includes("hi") || input.includes("hello")) {
+        response = "Hi there! 😊 How can I help you today?";
+    }
+    else {
+        response = "Sorry, I didn’t get that. Can you try again?";
+    }
+
+    addMessage(response, "bot");
+}
+
+</script>
+
+</body>
+</html>
